@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -46,32 +47,32 @@ class App extends StatelessWidget {
         ),
       ]
       ),
-      body: SingleChildScrollView(
-          child: SizedBox(
-            width: double.infinity,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: List.generate(3, (index) => Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
-                    width: 50,
-                    height: 50,
-                    color: Colors.green,
-                  ),
-                )),
-              ), ...List.generate(50, (index) => Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: 200,
-                  height: 70,
-                  color: Colors.blue,
-                ),
-              )),]
-                  ),
+      body: Stack(
+        children: [
+          Container(
+            width: 300,
+            height: 300,
+            color: Colors.green,
           ),
-        ),);
+          Positioned(
+            top: 10,
+            right: 10,
+            child: Container(
+              width:  30,
+              height: 30,
+              color: Colors.red,
+              child: const Icon(Icons.close),
+            ),
+          ),
+          const Text(
+            "아무개",
+            style: TextStyle(
+              fontSize: 30,
+              color: Colors.white,
+              fontWeight: FontWeight.w600),
+            ),
+          )
+        ],
+      ));
   }
 }
