@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 void main() {
   /// 앱을 실행시키는 함수
@@ -51,48 +52,24 @@ class App extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: 200,
-                  height: 70,
-                  color: Colors.red,
-                      ),
-              ),
-                        Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: 200,
-                  height: 70,
-                  color: Colors.blue,
-                      ),
-              ),
-                Padding(
+              children: [Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: List.generate(3, (index) => Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    width: 50,
+                    height: 50,
+                    color: Colors.green,
+                  ),
+                )),
+              ), ...List.generate(50, (index) => Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
                   width: 200,
                   height: 70,
                   color: Colors.blue,
-                      ),
-              ),
-                        Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: 200,
-                  height: 70,
-                  color: Colors.blue,
-                      ),
-              ),
-                        Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  width: 200,
-                  height: 70,
-                  color: Colors.blue,
-                      ),
-              ),
-            ]
+                ),
+              )),]
                   ),
           ),
         ),);
